@@ -6,6 +6,8 @@ import {
   HeadingFeature,
   HorizontalRuleFeature,
   InlineToolbarFeature,
+  OrderedListFeature,
+  UnorderedListFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 
@@ -77,6 +79,15 @@ export const Posts: CollectionConfig<'posts'> = {
         {
           fields: [
             {
+              name: 'excerpt',
+              type: 'textarea',
+              label: 'Perex / Excerpt',
+              maxLength: 400,
+              admin: {
+                description: 'Krátky úvod (2–3 vety). Zobrazí sa vo výpise článkov a pod titulkom v detaile.',
+              },
+            },
+            {
               name: 'heroImage',
               type: 'upload',
               relationTo: 'media',
@@ -88,8 +99,9 @@ export const Posts: CollectionConfig<'posts'> = {
                 features: ({ rootFeatures }) => {
                   return [
                     ...rootFeatures,
-                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
+                    HeadingFeature({ enabledHeadingSizes: [ 'h2', 'h3' ] }),
+                    UnorderedListFeature(),
+                    OrderedListFeature(),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
