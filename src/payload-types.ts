@@ -226,7 +226,7 @@ export interface Post {
   id: number;
   title: string;
   /**
-   * Krátky úvod (2–3 vety). Zobrazí sa vo výpise článkov a pod titulkom v detaile.
+   * Krátký úvod (2–3 věty). Zobrazí se ve výpisu článků a pod titulkem v detailu. Max 400 znaků.
    */
   excerpt?: string | null;
   heroImage?: (number | null) | Media;
