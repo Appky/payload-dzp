@@ -101,6 +101,7 @@ export const Posts: CollectionConfig<'posts'> = {
                   return [
                     ...defaultFeatures,
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4', 'h5'] }),
+                    BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
                     UnorderedListFeature(),
                     OrderedListFeature(),
                     FixedToolbarFeature(),
