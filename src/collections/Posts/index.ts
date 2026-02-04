@@ -8,7 +8,6 @@ import {
   InlineToolbarFeature,
   OrderedListFeature,
   UnorderedListFeature,
-  ChecklistFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 
@@ -79,6 +78,16 @@ export const Posts: CollectionConfig<'posts'> = {
       tabs: [
         {
           fields: [
+            {
+              name: 'excerpt',
+              type: 'textarea',
+              label: 'Perex / Excerpt',
+              maxLength: 400,
+              admin: {
+                description:
+                  'Krátky úvod (2–3 vety). Zobrazí sa vo výpise článkov a pod titulkom v detaile.',
+              },
+            },
             {
               name: 'heroImage',
               type: 'upload',
